@@ -61,7 +61,7 @@ def Size():
 
 # Exercise 5
 def ReverseWord(Word):
-    Stack = []
+    global Stack, TopOfStack
     for i in range(10):
         Stack.append(-1)
     TopOfStack = -1
