@@ -4,44 +4,72 @@
 # Exercise 1
 Stack = []
 TopOfStack = -1
-# Write code here to fill Stack with 10 elements, all -1
+for i in range(10):
+    Stack.append(-1)
 
 
 def IsEmpty():
-    # Write your code here
+    return TopOfStack == -1
     pass
 
 
 def IsFull():
-    # Write your code here
+    return TopOfStack == 9
     pass
 
 
 # Exercise 2
 def Push(Item):
-    # Write your code here
+    global Stack, TopOfStack
+    if  TopOfStack==9:
+        return False
+    else:
+        TopOfStack=TopOfStack+1
+        Stack[TopOfStack]=Item
+        return True
     pass
 
 
 # Exercise 3
 def Pop():
-    # Write your code here
+    global Stack, TopOfStack
+    if TopOfStack==-1:
+        return -1
+    else:
+        item=Stack[TopOfStack]
+        TopOfStack=TopOfStack-1
+        return item
     pass
 
 
 # Exercise 4
 def Peek():
-    # Write your code here
+    global Stack, TopOfStack
+    if TopOfStack == -1:
+        return -1
+    else:
+        item = Stack[TopOfStack]
+        return item
     pass
 
 
 def Size():
-    # Write your code here
+    global Stack, TopOfStack
+    return TopOfStack+1
     pass
 
 
 # Exercise 5
 def ReverseWord(Word):
-    # Write your code here
+    TopOfStack=-1
+    for i in range(len(Word)):
+        TopOfStack = TopOfStack+1
+        Push(Word[i])
+    str=""
+    for j in range(len(Word)):
+        a=Pop()
+        TopOfStack = TopOfStack - 1
+        str=str+a
+    return str
     pass
 
